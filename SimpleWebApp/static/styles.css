@@ -1,0 +1,97 @@
+body {
+    background: linear-gradient(135deg, #f4f6f8 0%, #e3eafc 100%);
+    min-height: 100vh;
+    color: #162447;
+}
+.navbar {
+    box-shadow: 0 4px 12px rgba(22, 36, 71, 0.08);
+    background: linear-gradient(90deg, #fff 60%, #e3eafc 100%);
+}
+.navbar-brand svg text {
+    fill: #162447;
+}
+.navbar-icons {
+    gap: 18px;
+}
+.navbar-icons i {
+    color: #162447;
+    font-size: 1.3rem;
+    transition: color 0.2s;
+}
+.navbar-icons i:hover {
+    color: #1f4068;
+}
+.table-container {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(22, 36, 71, 0.08);
+    padding: 2.5rem 2rem;
+    margin-top: -30px;
+}
+.table th {
+    background: linear-gradient(90deg, #162447 60%, #1f4068 100%);
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+.table td {
+    vertical-align: middle;
+    color: #162447;
+    background-color: #fff;
+}
+.footer {
+    background: linear-gradient(90deg, #fff 60%, #e3eafc 100%);
+    color: #162447;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 -2px 8px rgba(22, 36, 71, 0.08);
+}
+.footer .social-icons {
+    margin-top: 10px;
+    gap: 18px;
+}
+.footer .social-icons a {
+    color: #162447;
+    font-size: 1.3rem;
+    margin: 0 6px;
+    transition: color 0.2s;
+}
+.footer .social-icons a:hover {
+    color: #1f4068;
+}
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 8px;
+    border: 2px solid #1f4068;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(22, 36, 71, 0.08);
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #e3eafc;
+}
+a.text-primary {
+    color: #1f4068 !important;
+}
+h2 {
+    color: #162447 !important;
+    letter-spacing: 1px;
+}
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+.navbar-text {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #162447 !important;
+}
+.footer span {
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    margin-top: 8px;
+}

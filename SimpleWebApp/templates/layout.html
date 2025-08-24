@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    {% block head %}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Font Awesome for icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <!-- Custom styles -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <title>{% block title %}{% endblock %}</title>
+    {% endblock %}
+  </head>
+  <body>
+    {% block header %}
+        {% from "header.html" import header %}
+        {{ header() }}
+    {% endblock %}
+    <div id="content">{% block content %}{% endblock %}</div>
+    
+    {% from 'footer.html' import footer %}
+    {{ footer() }}
+  </body>
+</html

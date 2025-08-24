@@ -1,0 +1,24 @@
+{% macro header() %}
+<!-- Professional & Creative Header -->
+    <header class="mb-5">
+        <nav class="navbar navbar-expand-lg navbar-light rounded-bottom">
+            <div class="container d-flex align-items-center">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <svg width="32" height="32" fill="currentColor" class="me-2">
+                        <circle cx="16" cy="16" r="16" fill="#fff"/>
+                        <text x="16" y="21" text-anchor="middle" font-size="18" font-family="Arial">S</text>
+                    </svg>
+                    SimpleWebApp
+                </a>
+                <div class="navbar-icons d-flex ms-3">
+                    <i class="fas fa-users" title="Customers"></i>
+                    <i class="fas fa-chart-line" title="Analytics"></i>
+                    <i class="fas fa-cogs" title="Settings"></i>
+                </div>
+                <span class="navbar-text ms-auto">Customers</span>
+                <a href="/" class="btn btn-outline-primary ms-3">Home</a>
+                <a href="/customer/add" class="btn btn-primary ms-2">Add Customer</a>
+            </div>
+        </nav>
+    </header>
+{% endmacro %}

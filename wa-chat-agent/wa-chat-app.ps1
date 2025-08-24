@@ -1,11 +1,10 @@
-cd src
 uv sync
 
 # Option 1: Open default browser with URL
 Start-Process "http://127.0.0.1:7860"
 
 
-uv run wa-bot.py
+uv run src\waBot.py
 # open browser with url
 
 

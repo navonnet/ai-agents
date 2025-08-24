@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block title %}Customers | SimpleWebApp{% endblock %}
+
+{% block content %}
+<main class="container table-container mb-5">
+    <h2 class="mb-4 fw-bold">Customers</h2>
+    <table class="table table-bordered table-striped align-middle">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">E-mail</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                <td>
+                    <img src="https://api.dicebear.com/7.x/initials/svg?seed={{ row.firstName }}{{ row.lastName }}" class="avatar" alt="Avatar">
+                    {{ row.id }}
+                </td>
+                <td>{{ row.firstName }}</td>
+                <td>{{ row.lastName }}</td>
+                <td>
+                    <a href="mailto:{{ row.email }}" class="text-decoration-none text-primary">
+                        {{ row.email }}
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</main>
+{% endblock %}
