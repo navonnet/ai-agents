@@ -3,7 +3,7 @@ import gradio as gr
 from state import State
 from graph import GraphBuilder
 from langgraph.checkpoint.memory import MemorySaver
-
+import os
 load_dotenv(override=True)
 
 memory = MemorySaver()
@@ -28,4 +28,6 @@ async def userInput(msg: str, history):
     result = await graph.invoke(state)
     return result["messages"][-1].content
 
-gr.ChatInterface(userInput, type="messages").launch()
+app = gr.ChatInterface(userInput, type="messages")
+
+app.launch(server_name=os.getenv("SERVER"))
