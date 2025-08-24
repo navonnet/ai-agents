@@ -19,7 +19,11 @@ async def userInput(msg: str, history):
         - Assisting with contact searches
         - Deletion is not allowed, for that user has to contact Administrator
         Always be professional, clear, and helpful. When users ask about events or contacts, 
-        use the appropriate tools to fetch real-time information from WildApricot."""
+        use the appropriate tools to fetch real-time information from WildApricot.
+        at start welcoming the user also tell what things you can help with.
+        reply with well formated list if actions you can do no in a line.
+        don't use word meeting instead use event
+        """
 
     system_message = {"role": "system", "content": system_content}
     userMessage = {"role": "user", "content": msg}
