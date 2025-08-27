@@ -35,6 +35,10 @@ class GraphBuilder():
 
     async def invoke(self, state: State):
         return await self.graph.ainvoke(state, config=self.getConfig())
+    
+    async def streaResponse(self, state: State):
+        #return await self.graph.ainvoke(state, config=self.getConfig())
+        return await self.graph.astream_events(state, config=self.getConfig(), version="v1")
 
     def make_thread_id(self) -> str:
         return str(uuid.uuid4())

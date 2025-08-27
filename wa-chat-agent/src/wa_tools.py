@@ -37,13 +37,15 @@ class wa_tools:
                 If the user provides a full name (e.g. 'Terry Halson'), you MUST split it
                 into first_name='Terry' and last_name='Halson' before calling this tool.
                 Do not pass the full name as first_name.
+                Before creating contact, do display a final consolidated information and ask the user to confirm.
                 """,
             args_schema=CreateContactInput),
             Tool(
                     name="get_event_registrations",
                     func=client.get_event_registrations,
                     description="""Call this tool to get current registrations for an event, 
-                                    fetch event detail from list_events, ask user the name of the event."""
+                                    fetch event detail from list_events, ask user the name of the event.
+                                    """
             ),
             StructuredTool(
                     name="register_for_event",
@@ -53,7 +55,12 @@ class wa_tools:
                                     If email provided then search contact by tool 'findContactViaEmail' and the extract the id as contactId
                                     If no contact found using the email, create a new contact by using tool create_contact
                                     If creating contact do ask email, firstName and last of a contact.
-                                    if regType is not provided then you must ask the user for that, don't pass the default value""",
+                                    if regType is not provided then you must ask the user for that, don't pass the default value,
+                                    Registration type are custom values to be fetch from evant details, These can't any random values. It has to match with exat setup types.
+                                    Don't show registeration types as example, display as list and ask user to choose one the value.
+                                    Do not proceed with register_for_event until create_contact susceeded and you have contact Id.
+                                    If contactId is zero then findContactViaEmail
+                                    Before creating record, do display a final consolidated information and ask the user to confirm.""",
                     args_schema=RegisterForEventInput
             )]
 

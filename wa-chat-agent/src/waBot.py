@@ -29,8 +29,18 @@ async def userInput(msg: str, history):
     userMessage = {"role": "user", "content": msg}
 
     state = State(messages=[userMessage,system_message])
-    result = await graph.invoke(state)
-    return result["messages"][-1].content
+    assistant_reply = ""  # buffer for streaming text
+    async for event in graph.graph.astream_events(state, config=graph.getConfig(), version="v1"):
+        if event["event"] == "on_chat_model_stream":
+            token = event["data"]["chunk"].content
+            if token:
+                assistant_reply += token
+                # yield a full assistant message each step
+                yield {"role": "assistant", "content": assistant_reply}
+
+    #return result["messages"][-1].content
+    # Stream output tokens instead of waiting for full response
+    
 
 app = gr.ChatInterface(userInput, type="messages")
 port = int(os.environ.get("PORT", 7860))
